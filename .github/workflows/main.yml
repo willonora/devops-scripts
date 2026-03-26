@@ -1,0 +1,18 @@
+name: DevOps Scripts Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Print a message
+        run: echo "Hello from DevOps Scripts Workflow!"
+      - name: Build the project
+        run: npm install && npm run build
